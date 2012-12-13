@@ -28,7 +28,8 @@ public class MainActivity extends Activity {
 	//keeping track of gamestate in two synchronized arrays
 	public int[][] gamestate_int = new int[8][8];
 	public Circle[][] gamestate_circles = new Circle[8][8];
-	 
+	public Circle[][] validStates = new Circle[8][8];
+	public boolean[][] possiblemoves = new boolean[8][8];
 	//for the shake sensor
 	private SensorManager mSensorManager;
 	private float mAccel; // acceleration apart from gravity
@@ -151,6 +152,7 @@ public class MainActivity extends Activity {
 		RelativeLayout gl = (RelativeLayout) findViewById(R.id.board_view);
 		for (int i=0; i <8; i++) {
 			for (int j=0; j<8; j++) {
+
 
 				if ((MainActivity.this.gamestate_int[i][j] == 1) //if it should be black but its null
 						&& (MainActivity.this.gamestate_circles[i][j] == null) ) {

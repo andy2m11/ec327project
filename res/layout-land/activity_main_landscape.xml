@@ -1,0 +1,88 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_view"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" 
+    android:background="#FF000000">
+
+    <RelativeLayout
+        android:id="@+id/board_view"
+        android:layout_width="321dp"
+        android:layout_height="321dp"
+        android:background="#FFFF0000" >
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/TextView01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/player2count"
+        android:layout_alignBottom="@+id/player2count"
+        android:layout_alignLeft="@+id/textView1"
+        android:text="@string/player2score"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/playertracker"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/button1"
+        android:layout_alignBottom="@+id/button1"
+        android:layout_toLeftOf="@+id/button1"
+        android:clickable="false"
+        android:text="@string/Player1"
+        android:textColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="#FF0000FF"
+        android:onClick="reset"
+        android:text="@string/Reset"
+        android:textColor="#FFFFFFFF" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/player1count"
+        android:layout_alignBottom="@+id/player1count"
+        android:layout_toRightOf="@+id/board_view"
+        android:text="@string/player1score"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/player2count"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/playertracker"
+        android:layout_marginTop="82dp"
+        android:layout_toRightOf="@+id/TextView01"
+        android:clickable="false"
+        android:text="@integer/integer_pscore2"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/player1count"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:layout_above="@+id/TextView01"
+        android:layout_marginBottom="16dp"
+        android:layout_toRightOf="@+id/textView1"
+        android:clickable="false"
+        android:text="@string/score1"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp" />
+
+</RelativeLayout>
