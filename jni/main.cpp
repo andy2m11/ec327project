@@ -203,7 +203,7 @@ bool canConquerUp(int x, int y,int player, int** board)
         if (board[x][y-1] == op(player))     //checks up
         {
             int value = checkLine( op(player), x, (y -1) ,0,-1, board);
-            check = value;
+            check = (value==player);
         }
     }
     return check;
@@ -219,7 +219,7 @@ bool canConquerUR(int x, int y,int player, int** board)
         if (board[x+1][y-1] == op(player))//checks UR
         {
             int value = checkLine(op(player), (x+1), (y-1) ,1, -1, board);
-            check = value ==player;
+            check = (value ==player);
         }
     }
     return check;
