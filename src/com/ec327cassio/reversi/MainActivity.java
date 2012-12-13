@@ -2,7 +2,7 @@ package com.ec327cassio.reversi;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -75,12 +75,25 @@ public class MainActivity extends Activity {
 		movecount++;
 
 		}
+	@Override
+	public void onConfigurationChanged(Configuration newConfig) {
+	    super.onConfigurationChanged(newConfig);
+
+	    // Checks the orientation of the screen
+	    if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+	       setContentView(R.layout.activity_main_landscape);
+	    } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT){
+	       setContentView(R.layout.activity_main);
+	    }
+	}
+	
+	
 	
 	@Override
 	//called when activity started
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+//		setContentView(R.layout.activity_main);
 		//set main to be the grid
 		 RelativeLayout main = (RelativeLayout) findViewById(R.id.board_view);
 		 //set member variable
